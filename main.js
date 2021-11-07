@@ -6,7 +6,7 @@
 // makeChart();
 // document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
 //   document.writeln("<p>"+displayValue+"</p>");
-  makeChart();
+  makeProductChart();
 //   document.writeln("<p>"+displayValue+"</p>");
 //   document.writeln("<p>"+printValue+"</p>");
 
