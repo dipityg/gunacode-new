@@ -26,7 +26,7 @@ var xyValues = [
 ];
 
 var testValue = 0;
-var displayValue = "hey";
+var displayValue = "bro";
 
 function arrayparse(data){
   
@@ -50,8 +50,9 @@ function makeChart(/*csv_data*/) {
     {x:150, y:15}
   ];
 
-  var newxyValues = [];
-  newxyValues[2] = 3;
+  var newxyValues = 3;
+  //var newxyValues = [];
+  //newxyValues[2] = 3;
   //newxyValues[2].y = 4;
   
   
@@ -76,8 +77,8 @@ function makeChart(/*csv_data*/) {
   testValue = parseInt(csv_data[1].NRx_Month_1);
   displayValue = csv_data[0].NRx_Month_1;
 
-  printValue = String(newxyValues[2]);
-
+  //printValue = String(newxyValues);
+  printValue = "hey";
 
 }
 
