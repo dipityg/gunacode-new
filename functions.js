@@ -64,7 +64,6 @@ function makeProductChart() {
   
   // document.writeln("<p>tot "+totals+"</p>");
 
-  
   // document.writeln("<p>"+products+"</p>");
   // document.writeln("<p>"+totals+"</p>");
   // var producty = (csv_data[0].Product);
@@ -127,12 +126,13 @@ function makeProductChart() {
 
 
 function plotTopDoctors(){
-  var product = document.createElement("BUTTON");
-  var state = document.createElement("BUTTON");
-  document.body.appendChild(product);
-  document.body.appendChild(state);
-  product.addEventListener("click",topByProduct)
-  state.addEventListener("click",topByState)
+  document.writeln("<button onclick='topByProduct()'>"+"Top Doctors by Product"+"</button>");
+  // var product = document.createElement("button");
+  // // var state = document.createElement("button");
+  // document.body.appendChild(product);
+  // document.body.appendChild(state);
+  // product.addEventListener("click",topByProduct)
+  // state.addEventListener("click",topByState)
 
 
 }
@@ -141,8 +141,8 @@ function topByProduct(){
 
   // make an object that keeps track of doctors and their total prescriptions
   var docprescs = []
-  document.writeln("<p>Hellooooo</p>");
-  document.writeln("<p>"+products+"</p>");
+  // document.writeln("<p>Hellooooo</p>");
+  // document.writeln("<p>"+products+"</p>");
 
     // calculate the totals for all the products
     for (let j in products){
@@ -153,9 +153,9 @@ function topByProduct(){
           var totalpres = parseInt(csv_data[i].TRx_Month_1) + parseInt(csv_data[i].TRx_Month_2) + 
           parseInt(csv_data[i].TRx_Month_3)+parseInt(csv_data[i].TRx_Month_4)+parseInt(csv_data[i].TRx_Month_5)+
           parseInt(csv_data[i].TRx_Month_6);
-          document.writeln("<p>"+products[j]+"</p>");
-          document.writeln("<p>"+csv_data[i].first_name+"</p>");
-          document.writeln("<p>"+totalpres+"</p>");
+          // document.writeln("<p>"+products[j]+"</p>");
+          // document.writeln("<p>"+csv_data[i].first_name+"</p>");
+          // document.writeln("<p>"+totalpres+"</p>");
           docprescs.push({"product":products[j],"first_name":csv_data[i].first_name,
           "last_name":csv_data[i].last_name,
           "totprescs":totalpres});
@@ -190,8 +190,8 @@ function topByProduct(){
       var max4=0;
       for (x in docprescs){
         // prints all the objects
-        var obj = Object.values(docprescs[x]);
-        document.writeln("<p>"+obj+"</p>");
+        // var obj = Object.values(docprescs[x]);
+        // document.writeln("<p>"+obj+"</p>");
         // if (products[i]==docprescs[x].product){
           
         // }
@@ -230,19 +230,19 @@ function topByProduct(){
       document.writeln("<p>TOP DOCTORS</p>");
       var top1 = Object.values(topdoc1);
       document.writeln("<p>"+top1+"</p>");
-      document.writeln("<p>"+max1+"</p>");
+      document.writeln("<p>"+max1+" prescriptions</p>");
 
       var top2 = Object.values(topdoc2);
       document.writeln("<p>"+top2+"</p>");
-      document.writeln("<p>"+max2+"</p>");
+      document.writeln("<p>"+max2+" prescriptions</p>");
 
       var top3 = Object.values(topdoc3);
       document.writeln("<p>"+top3+"</p>");
-      document.writeln("<p>"+max3+"</p>");
+      document.writeln("<p>"+max3+" prescriptions</p>");
 
       var top4 = Object.values(topdoc4);
       document.writeln("<p>"+top4+"</p>");
-      document.writeln("<p>"+max4+"</p>");
+      document.writeln("<p>"+max4+" prescriptions</p>");
 
       
   // }
