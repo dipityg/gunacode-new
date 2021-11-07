@@ -1,17 +1,21 @@
 # Hack Ohio 2021 - Veeva Prompt
 This program analyzes pharmaceutical prescription data, providing many interesting trends and statistics. 
-    ![Chart](/images/doctorinfo.PNG)
     ![Total](/images/chart1.PNG)
+    ![Chart](/images/doctorinfo.PNG)
     ![Future](/images/chart2.PNG)       
 
 ## Contributors: GunaCode
 Mel Gunawardena, Sery Gunawardena
 
 ## Table of Contents:
+= Access web page
 - Repository Setup
 - Files
 - Program Instructions 
 - Acknowledgments
+
+## Access web app:
+Go to https://gunarx.github.io/ to view our completed project!
 
 ## Repository Setup:
 Clone repository by running (in terminal)
