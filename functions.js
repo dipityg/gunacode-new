@@ -66,7 +66,39 @@ function makeChart() {
     {x:150, y:15}
   ];
   
+  var choletot = 0;
+  var products = [];
+  var totals = [];
+  // populate a set of all the products
+  for (let x in csv_data){
+    // document.writeln("<p>"+x.Product+"</p>");
+    if (!(products.includes(csv_data[x].Product))){
+      prod = csv_data[x].Product;
+      document.writeln("<p>"+csv_data[x].Product+"</p>");
+
+      products.push(prod)
+
+    }
+  }
+  // calculate the totals for all the products
+  for (let i in csv_data){
+    for (let j in products){
+      if (csv_data[i].Product == products[j]){
+        var totalpres = csv_data[i].NRx_Month_1 + csv_data[i].NRx_Month_2 + csv_data[i].NRx_Month_3 +
+        csv_data[i].NRx_Month_4+ csv_data[i].NRx_Month_5 +csv_data[i].NRx_Month_6;
+        var avgpres = totalpres/6;
+        document.writeln("<p>average"+avgpres+"</p>");
+        choletot = choletot + avgpres;
+        totals[j]=choletot;
+    }
+
+    }}
   
+  document.writeln("<p>"+products+"</p>");
+  document.writeln("<p>"+totals+"</p>");
+  var producty = (csv_data[0].Product);
+  document.writeln("<p>"+producty+"</p>");
+
   var id = parseInt(csv_data[0].id);
   var month = parseInt(csv_data[0].NRx_Month_1);
   var month2 = 20
@@ -102,7 +134,7 @@ function makeChart() {
 
 
   // document.writeln("<p>"+displayValue+"</p>");
-  document.writeln("<p>"+id+"</p>");
+  document.writeln("<p>"+products+"</p>");
   document.writeln("<p>"+month+"</p>");
 }
 
