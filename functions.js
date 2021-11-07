@@ -14,7 +14,6 @@ function makeProductChart() {
 
   let btn = document.createElement("button");
   btn.innerHTML = "Save";
-
   /*
   btn.onclick = function () {
   //alert("Button is clicked");
@@ -22,9 +21,16 @@ function makeProductChart() {
   }
   };
   */
-
   btn.addEventListener("click", blueFunction);
   document.body.appendChild(btn);
+
+  let selecto = document.createElement("select");
+  selecto.id = "our_options";
+  selecto.innerHTML = "<option value=\"one\">Option1</option><option value=\"two\">Option2</option>";
+  selecto.addEventListener("change", blueFunction);
+  document.body.appendChild(selecto);
+  
+
 
   function blueFunction() {
 
