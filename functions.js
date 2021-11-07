@@ -32,7 +32,8 @@ function arrayparse(data){
   
 }
 
-function makeChart(/*csv_data*/) {
+/*csv_data*/
+function makeChart() {
 
   //document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
 
@@ -50,9 +51,14 @@ function makeChart(/*csv_data*/) {
     {x:150, y:15}
   ];
 
-  var newxyValues = 3;
-  //var newxyValues = [];
+  //xyValues[11].y =3;
+
+  //var newxyValues = 3;
+  //var newxyValues = [{}];
   //newxyValues[2] = 3;
+  //newxyValues[2].y = 3;
+  //newxyValues[3].x = 4;
+  //newxyValues[3].y = 5;
   //newxyValues[2].y = 4;
   
   
@@ -77,8 +83,8 @@ function makeChart(/*csv_data*/) {
   testValue = parseInt(csv_data[1].NRx_Month_1);
   displayValue = csv_data[0].NRx_Month_1;
 
-  //printValue = String(newxyValues);
-  printValue = "hey";
+  printValue = String(xyValues[6].y);
+  //printValue = "hey";
 
 }
 
