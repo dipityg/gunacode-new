@@ -8,7 +8,7 @@ This program analyzes pharmaceutical prescription data, providing many interesti
 Mel Gunawardena, Sery Gunawardena
 
 ## Table of Contents:
-= Access web page
+- Access web page
 - Repository Setup
 - Files
 - Program Instructions 
