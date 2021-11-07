@@ -34,6 +34,6 @@ git clone https://github.com/dipityg/gunacode-new.git
 
 
 ## Acknowledgments
-Thank you to w3schools.com and stackexchange.com. 
+Thank you to w3schools.com and stackexchange.com, Veeva, and HackI/O!
 - Linear Regression: https://stackoverflow.com/questions/6195335/linear-regression-in-javascript
-- Creating a collapsible section: https://www.w3schools.com/howto/howto_js_collapsible.asp
+- Chart.js: https://www.chartjs.org/docs/latest/
