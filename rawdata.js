@@ -18998,8 +18998,5 @@ var csv_data = [
       TRx_Month_4: "9",
       TRx_Month_5: "120",
       TRx_Month_6: "64"
-    },
-    {
-      id: ""
     }
   ]

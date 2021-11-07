@@ -65,40 +65,57 @@ function makeChart() {
     {x:140, y:14},
     {x:150, y:15}
   ];
+
+  document.writeln("<p>TOTALS</p>");
   
   var choletot = 0;
   var products = [];
   var totals = [];
   // populate a set of all the products
   for (let x in csv_data){
-    // document.writeln("<p>"+x.Product+"</p>");
+    //document.writeln("<p>"+csv_data[x].Product+"</p>");
     if (!(products.includes(csv_data[x].Product))){
       prod = csv_data[x].Product;
-      document.writeln("<p>"+csv_data[x].Product+"</p>");
+      //document.writeln("<p>"+csv_data[x].Product+"</p>");
 
       products.push(prod)
 
     }
-  }
+  }  
+
+  document.writeln("<p>"+products[0]+"</p>");
+  document.writeln("<p>"+products[1]+"</p>");
+  document.writeln("<p>"+products[2]+"</p>");
+  document.writeln("<p>"+products[3]+"</p>");
+
   // calculate the totals for all the products
-  for (let i in csv_data){
-    for (let j in products){
+  for (let j in products){
+    for (let i in csv_data){
       if (csv_data[i].Product == products[j]){
         // document.writeln("<p>product"+products[j]+"</p>");
 
-        var totalpres = parseInt(csv_data[i].NRx_Month_1) + parseInt(csv_data[i].NRx_Month_2)
+        var totalpres = parseInt(csv_data[i].NRx_Month_1) + parseInt(csv_data[i].NRx_Month_2) + 
         parseInt(csv_data[i].NRx_Month_3)+parseInt(csv_data[i].NRx_Month_4)+parseInt(csv_data[i].NRx_Month_5)+
         parseInt(csv_data[i].NRx_Month_6);
+
+        //document.writeln("<p>"+String(parseInt(csv_data[i].NRx_Month_1))+" "+String(parseInt(csv_data[i].NRx_Month_2))+"</p>");
+        //document.writeln("<p>"+String(totalpres)+"</p>");
+        
         // document.writeln("<p>nrx month 1 "+csv_data[i].NRx_Month_1+"</p>");
         // document.writeln("<p>totalpres "+totalpres+"</p>");
 
         var avgpres = totalpres/6;
+        document.writeln("<p>"+String(avgpres)+"</p>");
+
+        
         // document.writeln("<p>average "+avgpres+"</p>");
         choletot = choletot + avgpres;
-        totals[j]=choletot;
-    }
+        
+      }
 
     }
+    totals[j]=choletot;
+    choletot = 0;
 
   }
 
