@@ -1,5 +1,8 @@
 # Hack Ohio 2021 - Veeva Prompt
-This program analyzes pharmaceutical prescription data, providing many interesting trends and statistics 
+This program analyzes pharmaceutical prescription data, providing many interesting trends and statistics. 
+    ![Chart](/images/doctorinfo.PNG)
+    ![Total](/images/chart1.PNG)
+    ![Future](/images/chart2.PNG)       
 ## Contributors: GunaCode
 Mel Gunawardena, Sery Gunawardena
 
@@ -25,8 +28,8 @@ git clone https://github.com/dipityg/gunacode-new.git
 ## Program Instructions:
 1. To start the program, click on page1.html in the file system. This will open the web app in the Firefox Web Browser. 
 
-    ![File System](/images/filesystem.PNG)
-    ![Website](/images/page1.PNG)
+    <!-- ![File System](/images/filesystem.PNG)
+    ![Website](/images/page1.PNG) -->
     
 2. Click on the first collapsible section to expand and read the Game Rules and Examples. 
 
