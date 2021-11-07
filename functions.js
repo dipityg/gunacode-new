@@ -11,19 +11,19 @@ var gameGoing = false;
 var exampleCount = 0;
 var startTime, endTime;
 
-var xyValues = [
-  {x:50, y:7},
-  {x:60, y:8},
-  {x:70, y:8},
-  {x:80, y:9},
-  {x:90, y:9},
-  {x:100, y:9},
-  {x:110, y:10},
-  {x:120, y:11},
-  {x:130, y:14},
-  {x:140, y:14},
-  {x:150, y:15}
-];
+// var xyValues = [
+//   {x:50, y:7},
+//   {x:60, y:8},
+//   {x:70, y:8},
+//   {x:80, y:9},
+//   {x:90, y:9},
+//   {x:100, y:9},
+//   {x:110, y:10},
+//   {x:120, y:11},
+//   {x:130, y:14},
+//   {x:140, y:14},
+//   {x:150, y:15}
+// ];
 
 var testValue = 0;
 var displayValue = "bro";
@@ -34,6 +34,16 @@ function arrayparse(data){
 
 /*csv_data*/
 function makeChart() {
+
+    //xyValues[11].y =3;
+
+  //var newxyValues = 3;
+  //var newxyValues = [{}];
+  //newxyValues[2] = 3;
+  //newxyValues[2].y = 3;
+  //newxyValues[3].x = 4;
+  //newxyValues[3].y = 5;
+  //newxyValues[2].y = 4;
 
   document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
   document.writeln("<p>"+displayValue+"</p>");
@@ -55,21 +65,14 @@ function makeChart() {
     {x:140, y:14},
     {x:150, y:15}
   ];
-
-  //xyValues[11].y =3;
-
-  //var newxyValues = 3;
-  //var newxyValues = [{}];
-  //newxyValues[2] = 3;
-  //newxyValues[2].y = 3;
-  //newxyValues[3].x = 4;
-  //newxyValues[3].y = 5;
-  //newxyValues[2].y = 4;
   
-  // var id = csv_data[0].id;
-  // var month = csv_data[0].NRx_Month_1;
-
-  // var xyValues2 = [{id:month}]
+  
+  var id = parseInt(csv_data[0].id);
+  var month = parseInt(csv_data[0].NRx_Month_1);
+  var month2 = 20
+  // let obj = 
+  var xyValues2 = [{x:id, y:month}];
+  xyValues2[1] = {x:id, y:month2};
   // print(xyValues)
   
   new Chart("myChart", {
@@ -79,14 +82,14 @@ function makeChart() {
       datasets: [{
         pointRadius: 4,
         pointBackgroundColor: "rgb(0,0,255)",
-        data: xyValues
+        data: xyValues2
       }]
     },
     options: {
       legend: {display: false},
       scales: {
-        xAxes: [{ticks: {min: 40, max:160}}],
-        yAxes: [{ticks: {min: 6, max:16}}],
+        xAxes: [{ticks: {min: 0, max:160}}],
+        yAxes: [{ticks: {min: 0, max:160}}],
       }
     }
   });
@@ -94,12 +97,13 @@ function makeChart() {
   testValue = parseInt(csv_data[1].NRx_Month_1);
   displayValue = csv_data[0].NRx_Month_1;
 
-  printValue = String(xyValues[6].y);
+  printValue = String(xyValues2[0].id);
   //printValue = "hey";
 
 
-  document.writeln("<p>"+displayValue+"</p>");
-  document.writeln("<p>"+printValue+"</p>");
+  // document.writeln("<p>"+displayValue+"</p>");
+  document.writeln("<p>"+id+"</p>");
+  document.writeln("<p>"+month+"</p>");
 }
 
 
