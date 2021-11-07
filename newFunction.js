@@ -14,7 +14,14 @@ function newFunction(control_output) {
         new_control = 1;
     }*/
 
+    my_label1 = 'Drug1';
 
+    if(first_time == 1) {
+        first_time = 0;
+        my_label1 = 'Mug1';
+    } else {
+        //removeEnd();
+    }
 
     var xyValues = [
         8, 15, 11
@@ -45,6 +52,8 @@ function newFunction(control_output) {
         new_control = 1;
     }
 
+    //appendEnd();
+
     new Chart("mycha", {
         type: "line",
         
@@ -54,7 +63,7 @@ function newFunction(control_output) {
                  
             pointRadius: 4,
             pointBackgroundColor: "rgb(0,0,255)",
-            label: 'Drug1',
+            label: my_label1,
             data: xyValues
           },
           
@@ -76,6 +85,11 @@ function newFunction(control_output) {
           }
         }
       });
+
+      
+
+      
     
+      //return return_first;
 
 }
