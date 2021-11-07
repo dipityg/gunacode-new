@@ -1,6 +1,6 @@
 var testValue = 0;
 var displayValue = "bro";
-
+var products = []
 /*csv_data*/
 function makeProductChart() {
 
@@ -11,7 +11,7 @@ function makeProductChart() {
   // document.writeln("<p>TOTALS</p>");
   
   var choletot = 0;
-  var products = [];
+  // var products = [];
   var totals = [];
   // populate a set of all the products
   for (let x in csv_data){
@@ -126,3 +126,77 @@ function makeProductChart() {
 }
 
 
+function plotTopDoctors(){
+  var product = document.createElement("BUTTON");
+  var state = document.createElement("BUTTON");
+  document.body.appendChild(product);
+  document.body.appendChild(state);
+  product.addEventListener("click",topByProduct)
+  state.addEventListener("click",topByState)
+
+
+}
+
+function topByProduct(){
+
+  // make an object that keeps track of doctors and their total prescriptions
+  var docprescs = []
+  document.writeln("<p>Hellooooo</p>");
+  document.writeln("<p>"+products+"</p>");
+
+    // calculate the totals for all the products
+    for (let j in products){
+      for (let i in csv_data){
+        if (csv_data[i].Product == products[j]){
+          // document.writeln("<p>product"+products[j]+"</p>");
+  
+          var totalpres = parseInt(csv_data[i].TRx_Month_1) + parseInt(csv_data[i].TRx_Month_2) + 
+          parseInt(csv_data[i].TRx_Month_3)+parseInt(csv_data[i].TRx_Month_4)+parseInt(csv_data[i].TRx_Month_5)+
+          parseInt(csv_data[i].TRx_Month_6);
+          document.writeln("<p>"+products[j]+"</p>");
+          document.writeln("<p>"+csv_data[i].first_name+"</p>");
+          document.writeln("<p>"+totalpres+"</p>");
+          docprescs.push({"first_name":csv_data[i].first_name,
+          "last_name":csv_data[i].last_name,
+          "totprescs":totalpres});
+         
+
+          //document.writeln("<p>"+String(parseInt(csv_data[i].NRx_Month_1))+" "+String(parseInt(csv_data[i].NRx_Month_2))+"</p>");
+          //document.writeln("<p>"+String(totalpres)+"</p>");
+          
+          // document.writeln("<p>nrx month 1 "+csv_data[i].NRx_Month_1+"</p>");
+          // document.writeln("<p>totalpres "+totalpres+"</p>");
+  
+          // var avgpres = totalpres/6;
+          // document.writeln("<p>"+String(avgpres)+"</p>");
+  
+          
+          // document.writeln("<p>average "+avgpres+"</p>");
+          
+        }
+  
+      }
+      // totals[j]=choletot;
+      // choletot = 0;
+  
+    }
+
+    for (x in docprescs){
+      var obj = Object.values(docprescs[x]);
+      document.writeln("<p>"+obj+"</p>");
+
+    }
+    // var myArray = Object.values(docprescs);
+    document.writeln("<p >hellllllo</p>");
+
+
+    // document.writeln("<p>THE DOC PRESCS"+Object.values(docprescs)+"</p>");
+    // document.getElementById("demo").innerHTML = myArray;
+    // document.writeln("<p>THE DOC PRESCS"+docprescs+"</p>");
+
+
+}
+function topByState(){
+  document.writeln("<p>STATEEE</p>");
+
+}
