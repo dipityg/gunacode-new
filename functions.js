@@ -156,7 +156,7 @@ function topByProduct(){
           document.writeln("<p>"+products[j]+"</p>");
           document.writeln("<p>"+csv_data[i].first_name+"</p>");
           document.writeln("<p>"+totalpres+"</p>");
-          docprescs.push({"first_name":csv_data[i].first_name,
+          docprescs.push({"product":products[j],"first_name":csv_data[i].first_name,
           "last_name":csv_data[i].last_name,
           "totprescs":totalpres});
          
@@ -181,13 +181,73 @@ function topByProduct(){
   
     }
 
-    for (x in docprescs){
-      var obj = Object.values(docprescs[x]);
-      document.writeln("<p>"+obj+"</p>");
+    // rank the top doctors!
+    // for (i in products){
+      var topdoc1, topdoc2, topdoc3, topdoc4;
+      var max1=0;
+      var max2=0;
+      var max3=0;
+      var max4=0;
+      for (x in docprescs){
+        // prints all the objects
+        var obj = Object.values(docprescs[x]);
+        document.writeln("<p>"+obj+"</p>");
+        // if (products[i]==docprescs[x].product){
+          
+        // }
+        if (docprescs[x].product==products[0]){
+          if (docprescs[x].totprescs>max1){
+            topdoc1 = docprescs[x];
+            max1 = docprescs[x].totprescs
+          }
 
-    }
+        }
+
+        if (docprescs[x].product==products[1]){
+          if (docprescs[x].totprescs>max2){
+            topdoc2 = docprescs[x];
+            max2 = docprescs[x].totprescs
+          }
+
+        }
+
+        if (docprescs[x].product==products[2]){
+          if (docprescs[x].totprescs>max3){
+            topdoc3 = docprescs[x];
+            max3 = docprescs[x].totprescs
+          }
+
+        }
+
+        if (docprescs[x].product==products[3]){
+          if (docprescs[x].totprescs>max4){
+            topdoc4 = docprescs[x];
+            max4 = docprescs[x].totprescs
+          }
+
+        }
+      }
+      document.writeln("<p>TOP DOCTORS</p>");
+      var top1 = Object.values(topdoc1);
+      document.writeln("<p>"+top1+"</p>");
+      document.writeln("<p>"+max1+"</p>");
+
+      var top2 = Object.values(topdoc2);
+      document.writeln("<p>"+top2+"</p>");
+      document.writeln("<p>"+max2+"</p>");
+
+      var top3 = Object.values(topdoc3);
+      document.writeln("<p>"+top3+"</p>");
+      document.writeln("<p>"+max3+"</p>");
+
+      var top4 = Object.values(topdoc4);
+      document.writeln("<p>"+top4+"</p>");
+      document.writeln("<p>"+max4+"</p>");
+
+      
+  // }
     // var myArray = Object.values(docprescs);
-    document.writeln("<p >hellllllo</p>");
+    // document.writeln("<p >hellllllo</p>");
 
 
     // document.writeln("<p>THE DOC PRESCS"+Object.values(docprescs)+"</p>");
