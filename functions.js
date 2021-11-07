@@ -1,3 +1,5 @@
+// variables
+
 var set = [];
 var board = [];
 var deck = [];
@@ -9,8 +11,74 @@ var gameGoing = false;
 var exampleCount = 0;
 var startTime, endTime;
 
+var xyValues = [
+  {x:50, y:7},
+  {x:60, y:8},
+  {x:70, y:8},
+  {x:80, y:9},
+  {x:90, y:9},
+  {x:100, y:9},
+  {x:110, y:10},
+  {x:120, y:11},
+  {x:130, y:14},
+  {x:140, y:14},
+  {x:150, y:15}
+];
+
+var testValue = 0;
+var displayValue = "hey";
+
 function arrayparse(data){
-  // hello hib
+  
+}
+
+function makeChart(/*csv_data*/) {
+
+  //document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+
+  var xyValues = [
+    {x:50, y:7},
+    {x:60, y:8},
+    {x:70, y:8},
+    {x:80, y:9},
+    {x:90, y:9},
+    {x:100, y:9},
+    {x:110, y:10},
+    {x:120, y:11},
+    {x:130, y:14},
+    {x:140, y:14},
+    {x:150, y:15}
+  ];
+
+  var newxyValues = [];
+  newxyValues[2] = 3;
+  //newxyValues[2].y = 4;
+  
+  
+  new Chart("myChart", {
+    type: "scatter",
+    data: {
+      datasets: [{
+        pointRadius: 4,
+        pointBackgroundColor: "rgb(0,0,255)",
+        data: xyValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+        xAxes: [{ticks: {min: 40, max:160}}],
+        yAxes: [{ticks: {min: 6, max:16}}],
+      }
+    }
+  });
+
+  testValue = parseInt(csv_data[1].NRx_Month_1);
+  displayValue = csv_data[0].NRx_Month_1;
+
+  printValue = String(newxyValues[2]);
+
+
 }
 
 
@@ -180,6 +248,13 @@ function htmlIntro() {
   /* header for game setup */
   //button
   document.writeln("<button type=\"button\" class=\"collapsible\">" + gameHeader[1] + "</button>")
+  document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+  document.writeln("<p>"+displayValue+"</p>");
+  makeChart();
+  document.writeln("<p>"+displayValue+"</p>");
+  document.writeln("<p>"+printValue+"</p>");
+
+  
 
   //content
   document.writeln("<div class=\"content\">");

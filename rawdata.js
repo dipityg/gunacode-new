@@ -1,4 +1,4 @@
-rawdata = [
+var csv_data = [
     {
       id: "1",
       first_name: "Bren",
