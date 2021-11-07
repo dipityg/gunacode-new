@@ -35,6 +35,11 @@ function arrayparse(data){
 /*csv_data*/
 function makeChart() {
 
+  document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+  document.writeln("<p>"+displayValue+"</p>");
+  // makeChart();
+  
+
   //document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
 
   var xyValues = [
@@ -61,8 +66,14 @@ function makeChart() {
   //newxyValues[3].y = 5;
   //newxyValues[2].y = 4;
   
+  // var id = csv_data[0].id;
+  // var month = csv_data[0].NRx_Month_1;
+
+  // var xyValues2 = [{id:month}]
+  // print(xyValues)
   
   new Chart("myChart", {
+    
     type: "scatter",
     data: {
       datasets: [{
@@ -86,6 +97,9 @@ function makeChart() {
   printValue = String(xyValues[6].y);
   //printValue = "hey";
 
+
+  document.writeln("<p>"+displayValue+"</p>");
+  document.writeln("<p>"+printValue+"</p>");
 }
 
 
@@ -255,11 +269,11 @@ function htmlIntro() {
   /* header for game setup */
   //button
   document.writeln("<button type=\"button\" class=\"collapsible\">" + gameHeader[1] + "</button>")
-  document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
-  document.writeln("<p>"+displayValue+"</p>");
-  makeChart();
-  document.writeln("<p>"+displayValue+"</p>");
-  document.writeln("<p>"+printValue+"</p>");
+  // document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+  // document.writeln("<p>"+displayValue+"</p>");
+  // makeChart();
+  // document.writeln("<p>"+displayValue+"</p>");
+  // document.writeln("<p>"+printValue+"</p>");
 
   
 
