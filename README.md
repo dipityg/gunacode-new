@@ -33,7 +33,7 @@ git clone https://github.com/dipityg/gunacode-new.git
     
 2. Click on the first collapsible section to expand and read the Game Rules and Examples. 
 
-    ![Game Rules](/images/gamerules.PNG)
+    <!-- ![Game Rules](/images/gamerules.PNG) -->
 
 
 ## Acknowledgments
