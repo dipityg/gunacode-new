@@ -134,23 +134,39 @@ function makeChart() {
   // let obj = 
   var xyValues2 = [{x:id, y:month}];
   xyValues2[1] = {x:id, y:month2};
+
+  xyValues3 = [];
+  
+  for (let j in products){
+    
+    xyValues3.push({x: products[j], y: totals[j]});
+
+  }
+
   // print(xyValues)
   
   new Chart("myChart", {
     
-    type: "scatter",
+    type: "bar",
     data: {
+      labels: products,
       datasets: [{
         pointRadius: 4,
         pointBackgroundColor: "rgb(0,0,255)",
-        data: xyValues2
+        data: totals,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)'
+        ],
       }]
     },
     options: {
       legend: {display: false},
       scales: {
-        xAxes: [{ticks: {min: 0, max:160}}],
-        yAxes: [{ticks: {min: 0, max:160}}],
+        xAxes: [{ticks: {min: 0, max:5000}}],
+        yAxes: [{ticks: {min: 0, max:5000}}],
       }
     }
   });
