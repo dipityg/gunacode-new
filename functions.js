@@ -101,6 +101,8 @@ function makeChart() {
     }
 
   }
+
+  
   document.writeln("<p>tot "+totals+"</p>");
 
   
