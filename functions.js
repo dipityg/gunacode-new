@@ -84,15 +84,25 @@ function makeChart() {
   for (let i in csv_data){
     for (let j in products){
       if (csv_data[i].Product == products[j]){
-        var totalpres = csv_data[i].NRx_Month_1 + csv_data[i].NRx_Month_2 + csv_data[i].NRx_Month_3 +
-        csv_data[i].NRx_Month_4+ csv_data[i].NRx_Month_5 +csv_data[i].NRx_Month_6;
+        // document.writeln("<p>product"+products[j]+"</p>");
+
+        var totalpres = parseInt(csv_data[i].NRx_Month_1) + parseInt(csv_data[i].NRx_Month_2)
+        parseInt(csv_data[i].NRx_Month_3)+parseInt(csv_data[i].NRx_Month_4)+parseInt(csv_data[i].NRx_Month_5)+
+        parseInt(csv_data[i].NRx_Month_6);
+        // document.writeln("<p>nrx month 1 "+csv_data[i].NRx_Month_1+"</p>");
+        // document.writeln("<p>totalpres "+totalpres+"</p>");
+
         var avgpres = totalpres/6;
-        document.writeln("<p>average"+avgpres+"</p>");
+        // document.writeln("<p>average "+avgpres+"</p>");
         choletot = choletot + avgpres;
         totals[j]=choletot;
     }
 
-    }}
+    }
+
+  }
+  document.writeln("<p>tot "+totals+"</p>");
+
   
   document.writeln("<p>"+products+"</p>");
   document.writeln("<p>"+totals+"</p>");
