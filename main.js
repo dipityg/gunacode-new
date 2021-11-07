@@ -9,9 +9,13 @@
  
   makeProductChart();
   totaltrends();
-  newtrends();
+  
 
   plotTopDoctors();
+
+  writeInHtml();
+
+  newtrends();
   regs();
 //   document.writeln("<p>"+displayValue+"</p>");
 //   document.writeln("<p>"+printValue+"</p>");

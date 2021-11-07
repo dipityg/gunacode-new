@@ -108,6 +108,9 @@ function makeProductChart() {
       scales: {
         xAxes: [{ticks: {min: 0, max:5000}}],
         yAxes: [{ticks: {min: 0, max:5000}}],
+      }, title:{
+        display: true,
+        text:'Average New Prescriptions by Product'
       }
     }
   });
@@ -127,6 +130,10 @@ function makeProductChart() {
 
 function plotTopDoctors(){
   document.writeln("<button onclick='topByProduct()'>"+"Top Doctors by Product"+"</button>");
+
+  
+
+  
   // var product = document.createElement("button");
   // // var state = document.createElement("button");
   // document.body.appendChild(product);
@@ -135,6 +142,10 @@ function plotTopDoctors(){
   // state.addEventListener("click",topByState)
 
 
+}
+
+function twoFunction() {
+  location.reload();
 }
 
 function topByProduct(){
@@ -254,6 +265,18 @@ function topByProduct(){
     // document.getElementById("demo").innerHTML = myArray;
     // document.writeln("<p>THE DOC PRESCS"+docprescs+"</p>");
 
+
+    let btn2 = document.createElement("button");
+  btn2.innerHTML = "Return";
+  /*
+  btn.onclick = function () {
+  //alert("Button is clicked");
+  if(control_output == 1) {
+  }
+  };
+  */
+  btn2.addEventListener("click", twoFunction);
+  document.body.appendChild(btn2);
 
 }
 function topByState(){
@@ -611,4 +634,8 @@ function linearRegression(y,x){
   s = (slope*7)+intercept
   return s;
 
+}
+
+function writeInHtml() {
+  document.writeln("<p>yolo thats the motto</p>");
 }
