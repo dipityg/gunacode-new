@@ -356,39 +356,47 @@ function graphTotalTrends(months,monthlyTotals){
   
     data: {
         labels: months,
-      datasets: [{
+        datasets: [{
   
-        pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
-        label: 'chole',
-        data: chole
-      },
+          pointRadius: 4,
+          pointBackgroundColor: "rgb(255,0,0)",
+          label: 'chole',
+          data: chole,
+          borderColor: "rgb(255,0,0)",
+          // backgroundColor: "rgb(255,0,0)"
+        },
+    
+        {
+    
+          pointRadius: 4,
+          pointBackgroundColor: "rgb(0,5,255)",
+          label: 'zap',
+          data: zap,
+          borderColor: "rgb(0,5,255)",
   
-      {
+        },
   
-        pointRadius: 4,
-        pointBackgroundColor: "rgb(0,5,255)",
-        label: 'zap',
-        data: zap
-      },
-
-      {
+        {
+    
+          pointRadius: 4,
+          pointBackgroundColor: "rgb(34,139,34)",
+          label: 'nasal',
+          data: nasal,
+          borderColor: "rgb(34,139,34)",
   
-        pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
-        label: 'nasal',
-        data: nasal
-      },
-
-      {
+        },
   
-        pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
-        label: 'nova',
-        data: nova
-      }
+        {
+    
+          pointRadius: 4,
+          pointBackgroundColor: "rgb(138,43,226)",
+          label: 'nova',
+          data: nova,
+          borderColor: "rgb(138,43,226)",
   
-      ]
+        }
+    
+        ]
     },
     options: {
       legend: {display: true},
@@ -521,9 +529,11 @@ function graphNewTrends(months,chole,zap,nasal,nova){
       datasets: [{
   
         pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
+        pointBackgroundColor: "rgb(255,0,0)",
         label: 'chole',
-        data: chole
+        data: chole,
+        borderColor: "rgb(255,0,0)",
+        // backgroundColor: "rgb(255,0,0)"
       },
   
       {
@@ -531,23 +541,29 @@ function graphNewTrends(months,chole,zap,nasal,nova){
         pointRadius: 4,
         pointBackgroundColor: "rgb(0,5,255)",
         label: 'zap',
-        data: zap
+        data: zap,
+        borderColor: "rgb(0,5,255)",
+
       },
 
       {
   
         pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
+        pointBackgroundColor: "rgb(34,139,34)",
         label: 'nasal',
-        data: nasal
+        data: nasal,
+        borderColor: "rgb(34,139,34)",
+
       },
 
       {
   
         pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
+        pointBackgroundColor: "rgb(138,43,226)",
         label: 'nova',
-        data: nova
+        data: nova,
+        borderColor: "rgb(138,43,226)",
+
       }
   
       ]
