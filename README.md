@@ -82,5 +82,5 @@ node_modules/.bin/cypress open
 
 ## Acknowledgments
 Thank you to w3schools.com and stackexchange.com. 
-- Implementation of array combinations: https://codereview.stackexchange.com/questions/7001/generating-all-combinations-of-an-array
+- Linear Regression: https://stackoverflow.com/questions/6195335/linear-regression-in-javascript
 - Creating a collapsible section: https://www.w3schools.com/howto/howto_js_collapsible.asp

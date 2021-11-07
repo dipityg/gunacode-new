@@ -476,7 +476,7 @@ function newtrends(){
     // choletot = 0;
 
   // }
-  months = ["Month 1","Month 2","Month 3","Month 4","Month 5","Month 6", ]
+  months = ["Month 1","Month 2","Month 3","Month 4","Month 5","Month 6", "Month 7"]
   // monthlyTotals.push(month1);
   // monthlyTotals.push(month2);
   // monthlyTotals.push(month3);
@@ -488,11 +488,29 @@ function newtrends(){
   // document.writeln("<p>monthlytotals nasal"+nasal+"</p>");
   // document.writeln("<p>monthlytotals nova"+nova+"</p>");
 
-  graphNewTrends(months,monthlyTotals);
+  
+  document.writeln("<p>Chole</p>");
+  var s1=linearRegression(chole,[1,2,3,4,5,6])
+  chole.push(s1);
+
+
+  document.writeln("<p>Zap</p>");
+  var s2=linearRegression(zap,[1,2,3,4,5,6])
+  zap.push(s2);
+
+  document.writeln("<p>Nasal</p>");
+  var s3=linearRegression(nasal,[1,2,3,4,5,6])
+  nasal.push(s3);
+
+  document.writeln("<p>Nova</p>");
+  var s4=linearRegression(nova,[1,2,3,4,5,6])
+  nova.push(s4)
+
+  graphNewTrends(months,chole,zap,nasal,nova);
 
 }
 
-function graphNewTrends(months,monthlyTotals){
+function graphNewTrends(months,chole,zap,nasal,nova){
   document.writeln("<canvas id=\"chart3\" style=\"width:100%;max-width:700px\"></canvas>");
 
   new Chart("chart3", {
@@ -546,5 +564,35 @@ function graphNewTrends(months,monthlyTotals){
       }
     }
   });
+
+  
+}
+
+function linearRegression(y,x){
+  var lr = {};
+  var n = y.length;
+  var sum_x = 0;
+  var sum_y = 0;
+  var sum_xy = 0;
+  var sum_xx = 0;
+  var sum_yy = 0;
+
+  for (var i = 0; i < y.length; i++) {
+
+      sum_x += x[i];
+      sum_y += y[i];
+      sum_xy += (x[i]*y[i]);
+      sum_xx += (x[i]*x[i]);
+      sum_yy += (y[i]*y[i]);
+  } 
+
+  var slope = (n * sum_xy - sum_x * sum_y) / (n*sum_xx - sum_x * sum_x);
+  var intercept = (sum_y - slope * sum_x)/n;
+  var r2 = Math.pow((n*sum_xy - sum_x*sum_y)/Math.sqrt((n*sum_xx-sum_x*sum_x)*(n*sum_yy-sum_y*sum_y)),2);
+
+  document.writeln("<p> y= "+slope+"x +"+ intercept + " </p>");
+  document.writeln("<p> r^2= "+r2+ " </p>");
+  s = (slope*7)+intercept
+  return s;
 
 }

@@ -12,6 +12,7 @@
   newtrends();
 
   plotTopDoctors();
+  regs();
 //   document.writeln("<p>"+displayValue+"</p>");
 //   document.writeln("<p>"+printValue+"</p>");
 
