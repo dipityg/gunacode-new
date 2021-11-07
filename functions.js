@@ -1,11 +1,45 @@
 var testValue = 0;
 var displayValue = "bro";
+var control_output = 1;
 
 /*csv_data*/
 function makeProductChart() {
 
+  document.writeln("<p>Yo!</p>");
 
-  document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+  let canvas = document.createElement("canvas");
+  canvas.id="myChart";
+  canvas.style="width:100%;max-width:700px";
+  document.body.appendChild(canvas);
+
+  let btn = document.createElement("button");
+  btn.innerHTML = "Save";
+
+  /*
+  btn.onclick = function () {
+  //alert("Button is clicked");
+  if(control_output == 1) {
+  }
+  };
+  */
+
+  btn.addEventListener("click", blueFunction);
+  document.body.appendChild(btn);
+
+  function blueFunction() {
+
+    if(control_output == 1) {
+      document.body.removeChild(canvas);
+      newFunction(control_output);
+      newFunction(control_output);
+      document.body.appendChild(canvas);
+      control_output = 1;
+    }
+    
+
+  }
+
+  // document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
   // document.writeln("<p>"+displayValue+"</p>");
   
   // document.writeln("<p>TOTALS</p>");
@@ -117,6 +151,8 @@ function makeProductChart() {
   displayValue = csv_data[0].NRx_Month_1;
 
   printValue = String(xyValues2[0].id);
+
+
   //printValue = "hey";
 
 
