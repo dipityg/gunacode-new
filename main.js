@@ -8,6 +8,8 @@
 //   document.writeln("<p>"+displayValue+"</p>");
  
   makeProductChart();
+  trends();
+
   plotTopDoctors();
 //   document.writeln("<p>"+displayValue+"</p>");
 //   document.writeln("<p>"+printValue+"</p>");
