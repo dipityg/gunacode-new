@@ -6,6 +6,7 @@ function makeProductChart() {
 
 
   document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+  document.writeln("<br></br>");
   // document.writeln("<p>"+displayValue+"</p>");
   
   // document.writeln("<p>TOTALS</p>");
@@ -106,8 +107,21 @@ function makeProductChart() {
     options: {
       legend: {display: false},
       scales: {
-        xAxes: [{ticks: {min: 0, max:5000}}],
-        yAxes: [{ticks: {min: 0, max:5000}}],
+        //xAxes: [{ticks: {min: 0, max:5000}}],
+        //yAxes: [{ticks: {min: 0, max:5000}}],
+
+
+        xAxes: [{
+          ticks: {min: 0, max:5000}
+          }],
+          yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Prescriptions',
+            ticks: {min: 0, max:5000}
+            }
+          }]
+
       }, title:{
         display: true,
         text:'Average New Prescriptions by Product'
@@ -129,6 +143,7 @@ function makeProductChart() {
 
 
 function plotTopDoctors(){
+  document.writeln("<br></br>");
   document.writeln("<button onclick='topByProduct()'>"+"Top Doctors by Product"+"</button>");
 
   
@@ -239,20 +254,20 @@ function topByProduct(){
         }
       }
       document.writeln("<p>TOP DOCTORS</p>");
-      var top1 = Object.values(topdoc1);
-      document.writeln("<p>"+top1+"</p>");
+      var top1 = Object.values(topdoc1); 
+      document.writeln("<p><b>Cholecap: </b>"+topdoc1.first_name + " " + topdoc1.last_name +"</p>");
       document.writeln("<p>"+max1+" prescriptions</p>");
 
       var top2 = Object.values(topdoc2);
-      document.writeln("<p>"+top2+"</p>");
+      document.writeln("<p><b>Zap-a-Pain: </b>"+topdoc2.first_name + " " + topdoc2.last_name +"</p>");
       document.writeln("<p>"+max2+" prescriptions</p>");
 
       var top3 = Object.values(topdoc3);
-      document.writeln("<p>"+top3+"</p>");
+      document.writeln("<p><b>Nasalclear: </b>"+topdoc3.first_name + " " + topdoc3.last_name +"</p>");
       document.writeln("<p>"+max3+" prescriptions</p>");
 
       var top4 = Object.values(topdoc4);
-      document.writeln("<p>"+top4+"</p>");
+      document.writeln("<p><b>Nova-itch: </b>"+topdoc4.first_name + " " + topdoc4.last_name +"</p>");
       document.writeln("<p>"+max4+" prescriptions</p>");
 
       
@@ -424,12 +439,24 @@ function graphTotalTrends(months,monthlyTotals){
     options: {
       legend: {display: true},
       scales: {
-        xAxes: [{ticks: {min: 0, max:160}}],
-        yAxes: [{ticks: {min: 0, max:40000}}],
+        //xAxes: [{ticks: {min: 0, max:160}}],
+        //yAxes: [{ticks: {min: 0, max:40000}}],
+
+
+        xAxes: [{
+          ticks: {min: 0, max:160}
+          }],
+          yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Prescriptions',
+            ticks: {min: 0, max:40000}
+            }
+          }]
       },
       title:{
         display: true,
-        text:'Total Trends'
+        text:'Total Monthly Prescriptions by Product'
       }
     }
   });
@@ -520,20 +547,20 @@ function newtrends(){
   // document.writeln("<p>monthlytotals nova"+nova+"</p>");
 
   
-  document.writeln("<p>Chole</p>");
+  document.writeln("<b><p>Chole</p></b>");
   var s1=linearRegression(chole,[1,2,3,4,5,6])
   chole.push(s1);
 
 
-  document.writeln("<p>Zap</p>");
+  document.writeln("<b><p>Zap</p></b>");
   var s2=linearRegression(zap,[1,2,3,4,5,6])
   zap.push(s2);
 
-  document.writeln("<p>Nasal</p>");
+  document.writeln("<b><p>Nasal</p></b>");
   var s3=linearRegression(nasal,[1,2,3,4,5,6])
   nasal.push(s3);
 
-  document.writeln("<p>Nova</p>");
+  document.writeln("<b><p>Nova</p></b>");
   var s4=linearRegression(nova,[1,2,3,4,5,6])
   nova.push(s4)
 
@@ -542,6 +569,7 @@ function newtrends(){
 }
 
 function graphNewTrends(months,chole,zap,nasal,nova){
+  document.writeln("<br></br>");
   document.writeln("<canvas id=\"chart3\" style=\"width:100%;max-width:700px\"></canvas>");
 
   new Chart("chart3", {
@@ -594,12 +622,23 @@ function graphNewTrends(months,chole,zap,nasal,nova){
     options: {
       legend: {display: true},
       scales: {
-        xAxes: [{ticks: {min: 0, max:160}}],
-        yAxes: [{ticks: {min: 0, max:4000}}],
+        //xAxes: [{ticks: {min: 0, max:160}}],
+        //yAxes: [{ticks: {min: 0, max:4000}}],
+
+        xAxes: [{
+          ticks: {min: 0, max:160}
+          }],
+          yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Prescriptions',
+            ticks: {min: 0, max:4000}
+            }
+          }]
       },
       title:{
         display: true,
-        text:'New Trends'
+        text:'New Monthly Prescriptions by Product'
       }
     }
   });
@@ -644,7 +683,7 @@ function writeInHtml() {
 
   document.writeln("<div class=\"col-sm-8\">");
   document.writeln("<h2>Predicted Trends<div class=\"visible-xs-inline-block\">&nbsp <span class=\"glyphicon glyphicon-certificate slideanim\"></span></div></h2><br>");
-  document.writeln("<h4>Using the new prescription (newRx) data, we computed a linear regression of the data and predicted the next (7th) month's new prescriptions.</h4><br>");
+  document.writeln("<h4>Using the new prescription (newRx) data, we computed a linear regression of the data and predicted the next (7th) month's new prescriptions.</h4>");
   document.writeln("</div>");
   document.writeln("<div class=\"col-sm-4\">");
   document.writeln("<div class=\”text-right\”>          <div class=\”visible-md-inline visible-lg-inline\”>            <span class=\”glyphicon glyphicon-pencil logo slideanim\”></span>          </div>        </div>");
