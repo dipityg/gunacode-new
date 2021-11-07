@@ -8,7 +8,8 @@
 //   document.writeln("<p>"+displayValue+"</p>");
  
   makeProductChart();
-  trends();
+  totaltrends();
+  newtrends();
 
   plotTopDoctors();
 //   document.writeln("<p>"+displayValue+"</p>");
