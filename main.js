@@ -1,8 +1,19 @@
 //import Papa from "https://cdn.skypack.dev/papaparse@5.3.0";
-load();
+// load();
 // htmlIntro();
 // htmlGame();
 
-//makeChart();
+// makeChart();
+// document.writeln("<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>");
+//   document.writeln("<p>"+displayValue+"</p>");
+ 
+  makeProductChart();
+  totaltrends();
+  newtrends();
 
-arrayparse(rawdata);
+  plotTopDoctors();
+  regs();
+//   document.writeln("<p>"+displayValue+"</p>");
+//   document.writeln("<p>"+printValue+"</p>");
+
+// arrayparse(rawdata);

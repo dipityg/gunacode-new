@@ -623,3 +623,84 @@ function get_players() {
     return is_correct
   }
   
+  
+//Author: Jared Lawson
+//exampleSetAddEvent
+//This function adds event listeners to the button classes exampleSet
+function exampleSetEvents() {
+
+  //Returns a list of elements with class name example Set (4)
+  let example = document.getElementsByClassName("exampleSet");
+
+  //adds event listeners to each button
+  for (let k = 0; k < example.length; k++) {
+    example[k].addEventListener(
+      "click",
+      function() {
+        var htmlElement = this;
+        exampleSetSelection(htmlElement);
+      },
+      false);
+  }
+}
+
+//Author: Jared Lawson
+//exampleSetSelect
+//This function handles event selection
+function exampleSetSelection(obj) {
+
+  //first example shouldn't impact the exampleCount
+  let firstExample = 0;
+
+  //all examples use this activation if clicked turned green, clicked again gray
+  obj.activated = obj.activated || false;
+  obj.activated = !obj.activated;
+  obj.style.borderColor = (obj.activated ? "green" : "grey");
+
+  //the first example should not effect the exampleCount
+  if (obj.id != firstExample) {
+    //if this.activated is true, increment count, else decrement count
+    countExampleSet(obj.activated);
+  }
+
+  //if all cards selected congrats user and reset borders
+  if (exampleCount >= 3) {
+    //call function to handle when the whole set selected
+    exampleTwoReset();
+  }
+}
+
+//Author: Jared Lawson
+//countExampleSet
+//This function handles incrementing/decrementing exampleCount
+function countExampleSet(boolValue) {
+
+  //if true, increment exampleCount, else decrement exampleCount
+  if (boolValue) {
+    exampleCount++;
+  } else {
+    exampleCount--;
+  }
+}
+
+//Author: Jared Lawson
+//resetExampleTwo
+//This function handles reseting the example two cards
+function exampleTwoReset() {
+
+  //grab all the exampleSet buttons used when needing to reset example two
+  let example = document.getElementsByClassName("exampleSet");
+
+  //this loop turns exampleTwo back to gray after selecting the correct set
+  for (let k = 1; k < example.length; k++) {
+    //reset border to gray and set activated to false
+    example[k].style.borderColor = "grey";
+    example[k].activated = false;
+  }
+
+  //alert player they selected a correct match!
+  window.alert("Correct set match! Congrats!");
+
+  //reset the number of selected examples back to zero
+  exampleCount = 0;
+}
