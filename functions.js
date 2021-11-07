@@ -31,6 +31,8 @@ function makeProductChart() {
     if(control_output == 1) {
       document.body.removeChild(canvas);
       newFunction(control_output);
+      control_output = 0;
+    } else {
       newFunction(control_output);
       document.body.appendChild(canvas);
       control_output = 1;
