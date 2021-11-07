@@ -644,7 +644,7 @@ function writeInHtml() {
 
   document.writeln("<div class=\"col-sm-8\">");
   document.writeln("<h2>Predicted Trends<div class=\"visible-xs-inline-block\">&nbsp <span class=\"glyphicon glyphicon-certificate slideanim\"></span></div></h2><br>");
-  document.writeln("<h4>Using the new prescriptions (newRx) data, we computed a linears regression of the data and predicted a 7th month's new prescrptions.</h4><br>");
+  document.writeln("<h4>Using the new prescription (newRx) data, we computed a linear regression of the data and predicted the next (7th) month's new prescriptions.</h4><br>");
   document.writeln("</div>");
   document.writeln("<div class=\"col-sm-4\">");
   document.writeln("<div class=\”text-right\”>          <div class=\”visible-md-inline visible-lg-inline\”>            <span class=\”glyphicon glyphicon-pencil logo slideanim\”></span>          </div>        </div>");
