@@ -637,5 +637,24 @@ function linearRegression(y,x){
 }
 
 function writeInHtml() {
-  document.writeln("<p>yolo thats the motto</p>");
+  //document.writeln("<p>yolo thats the motto</p>");
+//document.writeln("<!-- Container (Breakthrough Section) -->    <div id=\”breakthrough\” class=\”container-fluid\”>      <div class=\”row\”>        <div class=\”col-sm-8\”>          <h2>Predicted Trends<div class=\”visible-xs-inline-block\”>&nbsp <span class=\”glyphicon glyphicon-certificate slideanim\”></span></div></h2><br>          <h4>Using the new prescriptions (newRx) data, we computed a linear regression of the data and predicted a 7th month's new prescrptions.</h4><br>                <!--<div class=\”center\”> <iframe width=\”560\” height=\”315\” src=\”https://www.youtube.com/embed/M47qiHwkuVk\” frameborder=\”0\” allow=\”accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\” allowfullscreen></iframe> </div>-->        </div>      <div class=\”col-sm-4\”>        <div class=\”text-right\”>          <div class=\”visible-md-inline-block visible-lg-inline-block\”>            <span class=\”glyphicon glyphicon-certificate logo slideanim\”></span>          </div>        </div>      </div>      <div class=\”col-sm-4\”>        <div class=\”text-center\”>          <div class=\”visible-sm-inline-block\”>            <span class=\”glyphicon glyphicon-certificate logo slideanim\”></span>          </div>        </div>      </div>      </div> <!--sdfsdfsdf-->          </div>");
+  document.writeln("<div id=\"breakthrough\" class=\"container-fluid\">");
+  document.writeln("<div class=\"row\">");
+
+  document.writeln("<div class=\"col-sm-8\">");
+  document.writeln("<h2>Predicted Trends<div class=\"visible-xs-inline-block\">&nbsp <span class=\"glyphicon glyphicon-certificate slideanim\"></span></div></h2><br>");
+  document.writeln("<h4>Using the new prescriptions (newRx) data, we computed a linears regression of the data and predicted a 7th month's new prescrptions.</h4><br>");
+  document.writeln("</div>");
+  document.writeln("<div class=\"col-sm-4\">");
+  document.writeln("<div class=\”text-right\”>          <div class=\”visible-md-inline visible-lg-inline\”>            <span class=\”glyphicon glyphicon-pencil logo slideanim\”></span>          </div>        </div>");
+  document.writeln("</div>");
+  document.writeln("<div class=\"col-sm-4\">");
+  document.writeln("<div class=\”text-center\”>          <div class=\”visible-sm-inline\”>            <span class=\”glyphicon glyphicon-pencil logo slideanim\”></span>          </div>        </div>");
+  document.writeln("</div>");
+
+  document.writeln("</div>");
+  document.writeln("</div>");
+  
+
 }
