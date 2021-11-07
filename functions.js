@@ -270,56 +270,59 @@ function trends(){
   var monthlyTotals = [];
 
   // calculate the totals for all the products
-  for (let j in products){
+  // for (let j in products){
     for (let i in csv_data){
       if (csv_data[i].Product == products[0]){
         // document.writeln("<p>product"+products[j]+"</p>");
-        
-        chole[0] = chole[0] + parseInt(csv_data[i].NRx_Month_1);
-        chole[1] = chole[1] + parseInt(csv_data[i].NRx_Month_2);
-        chole[2] = chole[2] + parseInt(csv_data[i].NRx_Month_3);
-        chole[3] = chole[3] + parseInt(csv_data[i].NRx_Month_4);
-        chole[4] = chole[4] + parseInt(csv_data[i].NRx_Month_5);
-        chole[5] = chole[5] + parseInt(csv_data[i].NRx_Month_6);
+        // document.writeln("<p>sumb"+chole[0]+"</p>");
+
+        chole[0] = chole[0]+ parseInt(csv_data[i].TRx_Month_1);
+        // document.writeln("<p>sum"+chole[0]+"</p>");
+        // document.writeln("<p>product"+parseInt(csv_data[i].NRx_Month_1)+"</p>");
+        chole[1] = chole[1] + parseInt(csv_data[i].TRx_Month_2);
+        chole[2] = chole[2] + parseInt(csv_data[i].TRx_Month_3);
+        chole[3] = chole[3] + parseInt(csv_data[i].TRx_Month_4);
+        chole[4] = chole[4] + parseInt(csv_data[i].TRx_Month_5);
+        chole[5] = chole[5] + parseInt(csv_data[i].TRx_Month_6);
       
         
       }
 
-      if (csv_data[i].Product == products[0]){
+      if (csv_data[i].Product == products[1]){
         // document.writeln("<p>product"+products[j]+"</p>");
         
-        zap[0] = zap[0] + parseInt(csv_data[i].NRx_Month_1);
-        zap[1] = zap[1] + parseInt(csv_data[i].NRx_Month_2);
-        zap[2] = zap[2] + parseInt(csv_data[i].NRx_Month_3);
-        zap[3] = zap[3] + parseInt(csv_data[i].NRx_Month_4);
-        zap[4] = zap[4] + parseInt(csv_data[i].NRx_Month_5);
-        zap[5] = zap[5] + parseInt(csv_data[i].NRx_Month_6);
+        zap[0] = zap[0] + parseInt(csv_data[i].TRx_Month_1);
+        zap[1] = zap[1] + parseInt(csv_data[i].TRx_Month_2);
+        zap[2] = zap[2] + parseInt(csv_data[i].TRx_Month_3);
+        zap[3] = zap[3] + parseInt(csv_data[i].TRx_Month_4);
+        zap[4] = zap[4] + parseInt(csv_data[i].TRx_Month_5);
+        zap[5] = zap[5] + parseInt(csv_data[i].TRx_Month_6);
       
         
       }
 
-      if (csv_data[i].Product == products[0]){
+      if (csv_data[i].Product == products[2]){
         // document.writeln("<p>product"+products[j]+"</p>");
         
-        nasal[0] = nasal[0] + parseInt(csv_data[i].NRx_Month_1);
-        nasal[1] = nasal[1] + parseInt(csv_data[i].NRx_Month_2);
-        nasal[2] = nasal[2] + parseInt(csv_data[i].NRx_Month_3);
-        nasal[3] = nasal[3] + parseInt(csv_data[i].NRx_Month_4);
-        nasal[4] = nasal[4] + parseInt(csv_data[i].NRx_Month_5);
-        nasal[5] = nasal[5] + parseInt(csv_data[i].NRx_Month_6);
+        nasal[0] = nasal[0] + parseInt(csv_data[i].TRx_Month_1);
+        nasal[1] = nasal[1] + parseInt(csv_data[i].TRx_Month_2);
+        nasal[2] = nasal[2] + parseInt(csv_data[i].TRx_Month_3);
+        nasal[3] = nasal[3] + parseInt(csv_data[i].TRx_Month_4);
+        nasal[4] = nasal[4] + parseInt(csv_data[i].TRx_Month_5);
+        nasal[5] = nasal[5] + parseInt(csv_data[i].TRx_Month_6);
       
         
       }
 
-      if (csv_data[i].Product == products[0]){
+      if (csv_data[i].Product == products[3]){
         // document.writeln("<p>product"+products[j]+"</p>");
         
-        nova[0] = nova[0] + parseInt(csv_data[i].NRx_Month_1);
-        nova[1] = nova[1] + parseInt(csv_data[i].NRx_Month_2);
-        nova[2] = nova[2] + parseInt(csv_data[i].NRx_Month_3);
-        nova[3] = nova[3] + parseInt(csv_data[i].NRx_Month_4);
-        nova[4] = nova[4] + parseInt(csv_data[i].NRx_Month_5);
-        nova[5] = nova[5] + parseInt(csv_data[i].NRx_Month_6);
+        nova[0] = nova[0] + parseInt(csv_data[i].TRx_Month_1);
+        nova[1] = nova[1] + parseInt(csv_data[i].TRx_Month_2);
+        nova[2] = nova[2] + parseInt(csv_data[i].TRx_Month_3);
+        nova[3] = nova[3] + parseInt(csv_data[i].TRx_Month_4);
+        nova[4] = nova[4] + parseInt(csv_data[i].TRx_Month_5);
+        nova[5] = nova[5] + parseInt(csv_data[i].TRx_Month_6);
       
         
       }
@@ -328,22 +331,27 @@ function trends(){
     // totals[j]=choletot;
     // choletot = 0;
 
-  }
+  // }
   months = ["Month 1","Month 2","Month 3","Month 4","Month 5","Month 6", ]
-  monthlyTotals.push(month1);
-  monthlyTotals.push(month2);
-  monthlyTotals.push(month3);
-  monthlyTotals.push(month4);
-  monthlyTotals.push(month5);
-  monthlyTotals.push(month6);
-  document.writeln("<p>monthlytotals "+monthlyTotals+"</p>");
+  // monthlyTotals.push(month1);
+  // monthlyTotals.push(month2);
+  // monthlyTotals.push(month3);
+  // monthlyTotals.push(month4);
+  // monthlyTotals.push(month5);
+  // monthlyTotals.push(month6);
+  document.writeln("<p>monthlytotals "+chole+"</p>");
+  document.writeln("<p>monthlytotals "+zap+"</p>");
+  document.writeln("<p>monthlytotals "+nasal+"</p>");
+  document.writeln("<p>monthlytotals "+nova+"</p>");
 
   graphTrends(months,monthlyTotals);
 
 }
 
 function graphTrends(months,monthlyTotals){
-  new Chart("myChart", {
+  document.writeln("<canvas id=\"chart2\" style=\"width:100%;max-width:700px\"></canvas>");
+
+  new Chart("chart2", {
     type: "line",
   
     data: {
@@ -352,16 +360,32 @@ function graphTrends(months,monthlyTotals){
   
         pointRadius: 4,
         pointBackgroundColor: "rgb(0,0,255)",
-        label: 'Drug1',
-        data: xyValues
+        label: 'chole',
+        data: chole
       },
   
       {
   
         pointRadius: 4,
+        pointBackgroundColor: "rgb(0,5,255)",
+        label: 'zap',
+        data: zap
+      },
+
+      {
+  
+        pointRadius: 4,
         pointBackgroundColor: "rgb(0,0,255)",
-        label: 'Drug2',
-        data: xyValues2
+        label: 'nasal',
+        data: nasal
+      },
+
+      {
+  
+        pointRadius: 4,
+        pointBackgroundColor: "rgb(0,0,255)",
+        label: 'nova',
+        data: nova
       }
   
       ]
@@ -369,8 +393,8 @@ function graphTrends(months,monthlyTotals){
     options: {
       legend: {display: true},
       scales: {
-        xAxes: [{ticks: {min: 40, max:160}}],
-        yAxes: [{ticks: {min: 6, max:25}}],
+        xAxes: [{ticks: {min: 0, max:160}}],
+        yAxes: [{ticks: {min: 0, max:40000}}],
       }
     }
   });
